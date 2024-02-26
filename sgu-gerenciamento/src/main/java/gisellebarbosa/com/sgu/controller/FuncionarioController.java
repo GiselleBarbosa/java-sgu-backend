@@ -29,7 +29,7 @@ public class FuncionarioController {
 
 
     // cadastra um novo funcionario
-    @PostMapping("/employees")
+    @PostMapping("/funcionarios")
     public Funcionario cadastraFuncionario(@RequestBody Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
     }
