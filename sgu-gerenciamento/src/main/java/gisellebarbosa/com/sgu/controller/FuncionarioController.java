@@ -20,7 +20,7 @@ import gisellebarbosa.com.sgu.model.Funcionario;
 import gisellebarbosa.com.sgu.repository.FuncionarioRepository;
 import gisellebarbosa.com.sgu.exception.ResourceNotFoundException;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("/api/v1/")
 public class FuncionarioController {
