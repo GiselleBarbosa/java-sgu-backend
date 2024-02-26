@@ -58,11 +58,17 @@ public class FuncionarioController {
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Não encontrado funcionado com id:" + id));
 
-        funcionario.setFirstName(funcionarioDetalhes.getFirstName());
-        funcionario.setLastName(funcionarioDetalhes.getLastName());
-        funcionario.setEmailId(funcionarioDetalhes.getEmailId());
+        funcionario.setNome(funcionarioDetalhes.getNome());
+        funcionario.setCpf(funcionarioDetalhes.getCpf());
+        funcionario.setDataNascimento(funcionarioDetalhes.getDataNascimento());
+        funcionario.setTelefone(funcionarioDetalhes.getTelefone());
+        funcionario.setEmail(funcionarioDetalhes.getEmail());
+        funcionario.setSalario(funcionarioDetalhes.getSalario());
+        funcionario.setPassword(funcionarioDetalhes.getPassword());
+        funcionario.setEmAtividade(funcionarioDetalhes.isEmAtividade());
+        funcionario.setDepartamentoId(funcionarioDetalhes.getDepartamentoId());
 
-        Funcionario funcionarioAtualizado = funcionarioRepository.save(funcionario);
+     final Funcionario funcionarioAtualizado = funcionarioRepository.save(funcionario);
         return ResponseEntity.ok(funcionarioAtualizado);
     }
 
