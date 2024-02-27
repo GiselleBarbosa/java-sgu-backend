@@ -1,6 +1,6 @@
 # SGU - Sistema de Gerenciamento de Usuários [Back-end]
 
-O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvida com Angular no frontend, Java com Spring Boot no backend e PostgreSQL como banco de dados. O principal objetivo deste sistema é fornecer funcionalidades básicas para o gerenciamento de perfis de administradores do sistema ou funcionários.
+O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvida com Angular no front-end, Java com Spring Boot no back-end e PostgreSQL como banco de dados. O principal objetivo deste sistema é fornecer funcionalidades básicas para o gerenciamento de perfis de administradores do sistema ou funcionários.
 
 ## Funcionalidades
 
@@ -22,15 +22,15 @@ Antes de executar a aplicação, certifique-se de ter instalado o seguinte:
 - Java Development Kit (JDK)
 - PostgreSQL
 
-## Backend
+## Front-end
 
-O backend deste projeto está disponível em [java-spring-postgre-sgu-backend](https://github.com/GiselleBarbosa/java-spring-postgre-sgu-backend). Certifique-se de configurar e executar o backend antes de iniciar a aplicação frontend.
+O front-end deste projeto está disponível em [angular-sgu-frontend](https://github.com/GiselleBarbosa/angular-sgu-frontend/tree/main). Certifique-se de configurar e executar o frontend após de iniciar o back-end.
 
 ## Executando a Aplicação
 
 1. Clone este repositório para o seu ambiente local.
 2. Navegue até o diretório do frontend e execute `npm install` para instalar as dependências.
-3. Inicie o frontend com o comando `ng serve`.
+3. Inicie o front-end com o comando `ng serve`.
 4. Navegue até o diretório do backend e execute a aplicação Spring Boot.
 5. Certifique-se de ter uma instância do PostgreSQL em execução com o esquema de banco de dados apropriado.
 
