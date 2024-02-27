@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c43f2d0-18be-497b-a21f-9f6b9d239122" name="Changes" comment="fix: alterado endpoint para o padrao correto">
-      <change afterPath="$PROJECT_DIR$/sgu-gerenciamento/src/main/java/gisellebarbosa/com/sgu/controller/FuncionarioResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sgu-gerenciamento/src/main/java/gisellebarbosa/com/sgu/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sgu-gerenciamento/src/main/java/gisellebarbosa/com/sgu/controller/FuncionarioController.java" afterDir="false" />
     </list>

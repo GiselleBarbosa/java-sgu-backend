@@ -1,9 +1,7 @@
 package gisellebarbosa.com.sgu.controller;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -56,21 +54,24 @@ public class FuncionarioController {
 
     // lista funcionarios por ID
     @GetMapping("/funcionarios/{id}")
-    public ResponseEntity<Funcionario> listaFuncionarioPorID(
-            @PathVariable Long id) {
+    public ResponseEntity<FuncionarioResponse> listaFuncionarioPorID(@PathVariable Long id) {
         Funcionario funcionario = funcionarioRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Não encontrado funcionado com id:" + id));
-        return ResponseEntity.ok(funcionario);
+                .orElseThrow(() -> new ResourceNotFoundException("Não encontrado funcionário com id:" + id));
+
+        String mensagem = "Funcionário encontrado com sucesso!";
+        List<Funcionario> funcionariosEncontrados = Collections.singletonList(funcionario);
+
+        return ResponseEntity.ok(new FuncionarioResponse(mensagem, funcionariosEncontrados));
     }
+
 
     // atualiza funcionarios
     @PutMapping("/funcionarios/{id}")
-    public ResponseEntity<Funcionario> atualizaFuncionario(
+    public ResponseEntity<FuncionarioResponse> atualizaFuncionario(
             @PathVariable Long id,
             @RequestBody Funcionario funcionarioDetalhes) {
         Funcionario funcionario = funcionarioRepository.findById(id)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Não encontrado funcionado com id:" + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Não encontrado funcionário com id: " + id));
 
         funcionario.setNome(funcionarioDetalhes.getNome());
         funcionario.setCpf(funcionarioDetalhes.getCpf());
@@ -82,19 +83,23 @@ public class FuncionarioController {
         funcionario.setEmAtividade(funcionarioDetalhes.isEmAtividade());
         funcionario.setDepartamentoId(funcionarioDetalhes.getDepartamentoId());
 
-     final Funcionario funcionarioAtualizado = funcionarioRepository.save(funcionario);
-        return ResponseEntity.ok(funcionarioAtualizado);
+        Funcionario funcionarioAtualizado = funcionarioRepository.save(funcionario);
+
+        String mensagem = "Funcionário atualizado com sucesso!";
+        List<Funcionario> funcionariosAtualizados = Collections.singletonList(funcionarioAtualizado);
+        return ResponseEntity.ok(new FuncionarioResponse(mensagem, funcionariosAtualizados));
     }
 
     // remove funcionarios
     @DeleteMapping("/funcionarios/{id}")
-    public ResponseEntity<Map<String, Boolean>> removeFuncionario(@PathVariable Long id) {
+    public ResponseEntity<FuncionarioResponse> removeFuncionario(@PathVariable Long id) {
         Funcionario funcionario = funcionarioRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Não encontrado funcionado com id:" + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Não encontrado funcionário com id: " + id));
 
         funcionarioRepository.delete(funcionario);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
+
+        String mensagem = "Funcionário removido com sucesso!";
+        List<Funcionario> funcionariosRemovidos = Collections.singletonList(funcionario);
+        return ResponseEntity.ok(new FuncionarioResponse(mensagem, funcionariosRemovidos));
     }
 }
