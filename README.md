@@ -9,7 +9,6 @@ O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvid
 
 ### Tecnologias Utilizadas
 
-- Angular 16
 - Java 17
 - Spring Boot 3
 - PostgreSQL
@@ -29,26 +28,48 @@ O front-end deste projeto está disponível em [angular-sgu-frontend](https://gi
 ### Executando a Aplicação
 
 1. Clone este repositório para o seu ambiente local.
-2. Navegue até o diretório do frontend e execute `npm install` para instalar as dependências.
-3. Inicie o front-end com o comando `ng serve`.
-4. Navegue até o diretório do backend e execute a aplicação Spring Boot.
-5. Certifique-se de ter uma instância do PostgreSQL em execução com o esquema de banco de dados apropriado.
+2. Certifique-se de ter uma instância do PostgreSQL em execução com o esquema de banco de dados apropriado.
+3. Navegue até o diretório do backend e execute a aplicação Spring Boot.
+4. Para iniciar a aplicação, certifique-se de ter todas as dependências necessárias configuradas e execute o comando adequado para iniciar o servidor Spring Boot.
 
 ### Configuração do Banco de Dados
-
-O esquema do banco de dados está disponível no diretório `database`. Inicialmente, você pode usar o JSON Server para simular o banco de dados enquanto o PostgreSQL não está disponível. Certifique-se de configurar corretamente o banco de dados antes de iniciar a aplicação.
-
-#### Utilizando JSON Server (opcional)
 
 Se você ainda não configurou o PostgreSQL, pode utilizar o JSON Server como uma opção temporária. Navegue até o diretório `database` e execute o comando `json-server --watch db.json --port 3000` para iniciar o JSON Server. Isso iniciará um servidor de mock que simula o comportamento do banco de dados.
 
 Certifique-se de migrar para o PostgreSQL assim que possível para garantir uma configuração adequada do banco de dados em produção.
 
-### Visualização do Mapa do Site
+### API funcionários
 
-Você pode visualizar o mapa do site abaixo:
+#### Cadastrar um novo funcionário
 
-![Mapa do Site](https://raw.githubusercontent.com/GiselleBarbosa/angular-sgu-frontend/main/src/assets/docs/mapa_site.png)
+- Método: POST
+- Endpoint: /api/v1/funcionarios
+- Descrição: Cadastra um novo funcionário.
+
+#### Listar todos os funcionários
+
+- Método: GET
+- Endpoint: /api/v1/funcionarios
+- Descrição: Lista todos os funcionários cadastrados.
+
+#### Listar funcionário por ID
+
+- Método: GET
+- Endpoint: /api/v1/funcionarios/{id}
+- Descrição: Lista um funcionário específico pelo seu ID.
+
+#### Atualizar funcionário
+
+- Método: PUT
+- Endpoint: /api/v1/funcionarios/{id}
+- Descrição: Atualiza os dados de um funcionário existente.
+
+#### Remover funcionário
+
+- Método: DELETE
+- Endpoint: /api/v1/funcionarios/{id}
+- Descrição: Remove um funcionário pelo seu ID.
+
 
 ### Visualização da Modelagem de Dados
 
