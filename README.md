@@ -48,13 +48,13 @@ Certifique-se de migrar para o PostgreSQL assim que possível para garantir uma 
 
 Você pode visualizar o mapa do site abaixo:
 
-![Mapa do Site](src/assets/docs/mapa_site.png)
+![Mapa do Site](https://raw.githubusercontent.com/GiselleBarbosa/angular-sgu-frontend/main/src/assets/docs/mapa_site.png)
 
 ## Visualização da Modelagem de Dados
 
 Você pode visualizar uma prévia da modelagem de dados abaixo:
 
-![Modelagem de Dados](src/assets/docs/modelagem_inicial.png)
+![Modelagem de Dados](https://raw.githubusercontent.com/GiselleBarbosa/angular-sgu-frontend/main/src/assets/docs/modelagem_inicial.png)
 
 ## Contribuindo
 
