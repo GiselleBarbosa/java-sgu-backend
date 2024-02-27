@@ -1,10 +1,12 @@
 package gisellebarbosa.com.sgu.controller;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,17 +29,29 @@ public class FuncionarioController {
     @Autowired
     private FuncionarioRepository funcionarioRepository;
 
-
     // cadastra um novo funcionario
     @PostMapping("/funcionarios")
-    public Funcionario cadastraFuncionario(@RequestBody Funcionario funcionario) {
-        return funcionarioRepository.save(funcionario);
+    public ResponseEntity<FuncionarioResponse> cadastraFuncionario(@RequestBody Funcionario funcionario) {
+        Funcionario funcionarioSalvo = funcionarioRepository.save(funcionario);
+        if (funcionarioSalvo.getId() != null) {
+            String mensagem = "Funcionário cadastrado com sucesso!";
+            List<Funcionario> funcionariosSalvos = Collections.singletonList(funcionarioSalvo);
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(new FuncionarioResponse(mensagem, funcionariosSalvos));
+        } else {
+            throw new ResourceNotFoundException("Falha ao cadastrar funcionário: Verifique os dados fornecidos.");
+        }
     }
 
     // lista todos funcionarios
     @GetMapping("/funcionarios")
-    public List<Funcionario> listarTodosFuncionarios() {
-        return funcionarioRepository.findAll();
+    public FuncionarioResponse listarTodosFuncionarios() {
+        List<Funcionario> funcionarios = funcionarioRepository.findAll();
+        if (funcionarios.isEmpty()) {
+            throw new ResourceNotFoundException("Falha ao retornar a lista de funcionários: A Lista está vazia ou não existe");
+        }
+        String mensagem = "Lista de funcionários recuperada com sucesso!";
+        return new FuncionarioResponse(mensagem, funcionarios);
     }
 
     // lista funcionarios por ID
@@ -64,7 +78,7 @@ public class FuncionarioController {
         funcionario.setTelefone(funcionarioDetalhes.getTelefone());
         funcionario.setEmail(funcionarioDetalhes.getEmail());
         funcionario.setSalario(funcionarioDetalhes.getSalario());
-        funcionario.setPassword(funcionarioDetalhes.getPassword());
+        funcionario.setSenha(funcionarioDetalhes.getSenha());
         funcionario.setEmAtividade(funcionarioDetalhes.isEmAtividade());
         funcionario.setDepartamentoId(funcionarioDetalhes.getDepartamentoId());
 

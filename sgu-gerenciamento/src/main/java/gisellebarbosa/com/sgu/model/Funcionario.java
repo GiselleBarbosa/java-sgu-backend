@@ -9,14 +9,17 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "funcionarios")
+@Table(name = "funcionarios", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "cpf", name = "uk_cpf"),
+        @UniqueConstraint(columnNames = "email", name = "uk_email")
+})
 public class Funcionario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", unique = true, nullable = false) // Restrição única para o CPF
     private String cpf;
 
     @Column(name = "nome")
@@ -28,19 +31,18 @@ public class Funcionario {
     @Column(name = "telefone")
     private String telefone;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false) // Restrição única para o e-mail
     private String email;
 
     @Column(name = "salario")
     private double salario;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "senha")
+    private String senha;
 
     @Column(name = "em_atividade")
     private boolean emAtividade;
 
     @Column(name = "departamento_id")
     private Long departamentoId;
-
 }
