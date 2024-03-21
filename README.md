@@ -43,31 +43,31 @@ Certifique-se de migrar para o PostgreSQL assim que possível para garantir uma 
 #### Cadastrar um novo funcionário
 
 - Método: POST
-- Endpoint: /api/v1/funcionarios
+- Endpoint: `/api/v1/funcionarios`
 - Descrição: Cadastra um novo funcionário.
 
 #### Listar todos os funcionários
 
 - Método: GET
-- Endpoint: /api/v1/funcionarios
+- Endpoint: `/api/v1/funcionarios`
 - Descrição: Lista todos os funcionários cadastrados.
 
 #### Listar funcionário por ID
 
 - Método: GET
-- Endpoint: /api/v1/funcionarios/{id}
+- Endpoint: `/api/v1/funcionarios/{id}`
 - Descrição: Lista um funcionário específico pelo seu ID.
 
 #### Atualizar funcionário
 
 - Método: PUT
-- Endpoint: /api/v1/funcionarios/{id}
+- Endpoint: `/api/v1/funcionarios/{id}`
 - Descrição: Atualiza os dados de um funcionário existente.
 
 #### Remover funcionário
 
 - Método: DELETE
-- Endpoint: /api/v1/funcionarios/{id}
+- Endpoint: `/api/v1/funcionarios/{id}`
 - Descrição: Remove um funcionário pelo seu ID.
 
 
