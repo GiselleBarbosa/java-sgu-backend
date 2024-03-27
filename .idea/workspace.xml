@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c43f2d0-18be-497b-a21f-9f6b9d239122" name="Changes" comment="fix: alterado endpoint para o padrao correto">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgu-gerenciamento/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sgu-gerenciamento/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgu-gerenciamento/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sgu-gerenciamento/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
