@@ -38,38 +38,9 @@ Se você ainda não configurou o PostgreSQL, pode utilizar o JSON Server como um
 
 Certifique-se de migrar para o PostgreSQL assim que possível para garantir uma configuração adequada do banco de dados em produção.
 
-### API funcionários
+### Swagger UI
 
-#### Cadastrar um novo funcionário
-
-- Método: POST
-- Endpoint: `/api/v1/funcionarios`
-- Descrição: Cadastra um novo funcionário.
-
-#### Listar todos os funcionários
-
-- Método: GET
-- Endpoint: `/api/v1/funcionarios`
-- Descrição: Lista todos os funcionários cadastrados.
-
-#### Listar funcionário por ID
-
-- Método: GET
-- Endpoint: `/api/v1/funcionarios/{id}`
-- Descrição: Lista um funcionário específico pelo seu ID.
-
-#### Atualizar funcionário
-
-- Método: PUT
-- Endpoint: `/api/v1/funcionarios/{id}`
-- Descrição: Atualiza os dados de um funcionário existente.
-
-#### Remover funcionário
-
-- Método: DELETE
-- Endpoint: `/api/v1/funcionarios/{id}`
-- Descrição: Remove um funcionário pelo seu ID.
-
+A documentação da API pode ser visualizada através do Swagger UI. Acesse [http://localhost:8080/swagger-ui/index.html#/](http://localhost:8080/swagger-ui/index.html#/) para explorar os endpoints e suas descrições.
 
 ### Visualização da Modelagem de Dados
 
