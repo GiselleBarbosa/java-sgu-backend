@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  sgu-gerenciamento:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/sgu_gerenciamento  # Usamos o nome do serviço do banco de dados como host
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=sgu_gerenciamento
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
