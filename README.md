@@ -12,31 +12,23 @@ O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvid
 - Java 17
 - Spring Boot 3
 - PostgreSQL
+- Docker
+- Swagger
 
 ### Pré-requisitos
 
 Antes de executar a aplicação, certifique-se de ter instalado o seguinte:
 
-- Angular CLI
-- Java Development Kit (JDK)
-- PostgreSQL
-
-### Front-end
-
-O front-end deste projeto está disponível em [angular-sgu-frontend](https://github.com/GiselleBarbosa/angular-sgu-frontend/tree/main). Certifique-se de configurar e executar o frontend após de iniciar o back-end.
+- Docker
+- Docker Compose
+- Maven
 
 ### Executando a Aplicação
 
 1. Clone este repositório para o seu ambiente local.
-2. Certifique-se de ter uma instância do PostgreSQL em execução com o esquema de banco de dados apropriado.
-3. Navegue até o diretório do backend e execute a aplicação Spring Boot.
-4. Para iniciar a aplicação, certifique-se de ter todas as dependências necessárias configuradas e execute o comando adequado para iniciar o servidor Spring Boot.
-
-### Configuração do Banco de Dados
-
-Se você ainda não configurou o PostgreSQL, pode utilizar o JSON Server como uma opção temporária. Navegue até o diretório `database` e execute o comando `json-server --watch db.json --port 3000` para iniciar o JSON Server. Isso iniciará um servidor de mock que simula o comportamento do banco de dados.
-
-Certifique-se de migrar para o PostgreSQL assim que possível para garantir uma configuração adequada do banco de dados em produção.
+2. Navegue até o diretório raiz do projeto.
+3. Execute o comando `mvn clean package` para gerar o arquivo JAR da aplicação.
+4. Execute o comando `docker-compose up` para iniciar a aplicação. Isso irá iniciar tanto o back-end quanto o banco de dados PostgreSQL em contêineres Docker.
 
 ### Swagger UI
 
@@ -47,6 +39,10 @@ A documentação da API pode ser visualizada através do Swagger UI. Acesse [htt
 Você pode visualizar uma prévia da modelagem de dados abaixo:
 
 ![Modelagem de Dados](https://raw.githubusercontent.com/GiselleBarbosa/angular-sgu-frontend/main/src/assets/docs/modelagem_inicial.png)
+
+### Front-end
+
+O front-end deste projeto está disponível em [angular-sgu-frontend](https://github.com/GiselleBarbosa/angular-sgu-frontend/tree/main). Certifique-se de configurar e executar o frontend após de iniciar o back-end.
 
 ### Contribuindo
 
